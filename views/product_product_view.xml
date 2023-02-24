@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+    
+        <record id="product_product_inherit_productos_sugeridos" model="ir.ui.view">
+            <field name="name">product.product.view.form.inherit</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='purchase']/group[@name='purchase']" position="after">
+                    <group string="Productos Opcionales">
+                        <group>
+                            <field name="suggested_product_ids" widget="many2many_tags" />
+                        </group>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    
+    </data>
+</flectra>
