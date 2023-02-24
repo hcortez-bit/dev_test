@@ -7,7 +7,9 @@
             <field name="model">purchase.order</field>
             <field name="inherit_id" ref="purchase.purchase_order_form"/>
             <field name="arch" type="xml">
-                
+                <xpath expr="//page[@name='products']/field[@name='order_line']/tree/field[@name='sequence']" position="after">
+                    <button name="do_change" type="object" class="btn-link fa fa-refresh"/>
+                </xpath>
             </field>
         </record>
     
