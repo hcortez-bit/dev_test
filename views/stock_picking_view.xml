@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<flectra>
+    <data>
+    
+        <record id="stock_picking_type_inherit_categ_ids" model="ir.ui.view">
+            <field name="name">stock.picking.type.view.form.inherit</field>
+            <field name="model">stock.picking.type</field>
+            <field name="inherit_id" ref="stock.view_picking_type_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@groups='stock.group_stock_multi_locations']" position="after">
+                    <group string="Categorias Permitidas">
+                        <field name="categ_ids" widget="many2many_tags" />
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="stock_picking_inherit_categ_ids" model="ir.ui.view">
+            <field name="name">stock.picking.view.form.inherit</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='origin']" position="after">
+                    <field name="categ_ids" widget="many2many_tags" />
+                </xpath>
+            </field>
+        </record>
+    
+    </data>
+</flectra>
